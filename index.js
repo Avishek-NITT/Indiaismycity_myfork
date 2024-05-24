@@ -1,4 +1,10 @@
 console.log("This is DELTA WEBDEV TASK1")
+const gridContainer = document.querySelector(".grid-container")
+
+
+const ROW = 7
+const COLUMN = 7
+
 
 
 //PROPOSED GAME LOGIC
@@ -48,3 +54,28 @@ class Semi_Ricochet {
 class Canon {
 
 }
+
+
+
+
+
+
+
+
+
+//Game logic   ----> Temporary idea
+
+function fillGrid() {
+    // Loop to create grid items and fill the grid
+    for (let i = 0; i < ROW * COLUMN; i++) {
+        const gridItem = document.createElement('div');
+        gridItem.classList.add('grid-item');
+        gridContainer.appendChild(gridItem);
+    }
+}
+
+
+window.onload = function() {
+    fillGrid()
+}
+
