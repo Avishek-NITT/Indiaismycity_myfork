@@ -29,6 +29,12 @@ class Game {
 class Player {
     // This will store the positions, stats and all for the each class.
     // Two instances will be spawned for two player mode
+
+    // pieces is an array which will have the instances of the pieces
+    pieces = []
+    
+
+
 }
 
 
@@ -36,23 +42,33 @@ class Player {
 
 // Piece objects
 class Titan {
-
+    constructor(){
+        this.text = "Titan"
+    }
 }
 
 class Tank {
-
+    constructor(){
+        this.text = "Tank"
+    }
 }
 
 class Ricochet {
-
+    constructor(){
+        this.text = "Ricochet"
+    }
 }
 
 class Semi_Ricochet {
-
+    constructor(){
+        this.text = "Semi_Ricochet"
+    }
 }
 
 class Canon {
-
+    constructor(){
+        this.text = "Canon"
+    }
 }
 
 
@@ -64,6 +80,7 @@ class Canon {
 
 
 //Game logic   ----> Temporary idea
+let p1 = new Player;
 
 function fillGrid() {
     // Loop to create grid items and fill the grid
@@ -75,7 +92,28 @@ function fillGrid() {
 }
 
 
+function spawnPlayers() {
+    p1.pieces.push(new Titan);
+    p1.pieces.push(new Tank);
+    p1.pieces.push(new Ricochet);
+    p1.pieces.push(new Semi_Ricochet);
+    p1.pieces.push(new Canon);
+
+}
+
+
+
+//For testing purposes
+function test(){
+    p1.pieces.forEach((instance) => {
+        console.log(instance.text)
+    })
+}
+
+
 window.onload = function() {
     fillGrid()
+    spawnPlayers()
+    
 }
 
